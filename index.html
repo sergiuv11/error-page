@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>We'll Be Back Soon! 🚧</title>
+    <title>We’ll Be Right Back | Scheduled Maintenance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
         /* General Styling */
+        :root {
+            --bg: radial-gradient(circle at 15% 20%, #ffb6c1 0, transparent 30%),
+                   radial-gradient(circle at 80% 0%, #ffe37f 0, transparent 25%),
+                   radial-gradient(circle at 20% 80%, #7dd3fc 0, transparent 25%),
+                   linear-gradient(135deg, #0f172a 0%, #0b1021 100%);
+            --glass: rgba(255, 255, 255, 0.08);
+            --text: #e5e7eb;
+            --accent: #7dd3fc;
+            --accent-2: #f472b6;
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        * { box-sizing: border-box; }
+
         body {
             margin: 0;
             padding: 0;
@@ -14,37 +32,110 @@
             color: #333;
             text-align: center;
             padding: 50px;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            justify-content: center;
+            padding: 32px;
+            background: var(--bg);
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text);
+        }
+
+        .wrapper {
+            width: min(1100px, 100%);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            padding: 32px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(12px);
+            animation: floatIn 1.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wrapper::before,
+        .wrapper::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            filter: blur(70px);
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .wrapper::before {
+            background: #7dd3fc;
+            top: -60px;
+            left: -40px;
         }
 
         .container {
             max-width: 700px;
             padding: 20px;
+        .wrapper::after {
+            background: #f472b6;
+            bottom: -80px;
+            right: -20px;
+        }
+
+        .card {
+            padding: 24px;
             border-radius: 20px;
             background: rgba(255, 255, 255, 0.9);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             animation: fadeIn 1.5s ease-in-out;
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            position: relative;
+            z-index: 1;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
         }
 
         /* Headline */
+        .hero { grid-column: span 2; }
+        @media (max-width: 860px) { .hero { grid-column: span 1; } }
+
         h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             color: #FF6B6B;
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.1rem);
+            margin: 0 0 12px;
+            letter-spacing: -0.02em;
         }
 
         p {
             font-size: 1.5rem;
             line-height: 1.8;
             margin-bottom: 20px;
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            color: #cbd5f5;
+            margin-bottom: 14px;
         }
 
         /* Emojis Styling */
         .emoji {
             font-size: 4rem;
+        .highlight {
+            color: var(--accent);
+            font-weight: 700;
         }
 
         /* Button Styling */
@@ -55,14 +146,37 @@
             color: white;
             border: none;
             border-radius: 50px;
+        p { line-height: 1.7; margin: 0 0 18px; }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.14);
             text-decoration: none;
             font-size: 1.2rem;
             transition: all 0.3s ease;
             cursor: pointer;
+            color: var(--text);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
 
         .button:hover {
             background-color: #333;
+        .cta.primary {
+            background: linear-gradient(135deg, #38bdf8, #6366f1);
+            color: #0b1021;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35);
         }
 
         /* Responsive Design */
@@ -73,6 +187,11 @@
             p {
                 font-size: 1.2rem;
             }
+        .cta.secondary { background: rgba(255, 255, 255, 0.08); }
+
+        .cta:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.3);
         }
 
         /* Fade-in Animation */
@@ -85,6 +204,93 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        .status-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .status-item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .status-icon {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 1.1rem;
+        }
+
+        .status-copy strong { color: #fff; }
+
+        .timeline {
+            margin: 12px 0 0;
+            display: grid;
+            gap: 12px;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 18px;
+            top: 10px;
+            bottom: 12px;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(125, 211, 252, 0.4), rgba(244, 114, 182, 0.4));
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 3px solid rgba(125, 211, 252, 0.8);
+            background: #0b1021;
+            box-shadow: 0 0 0 6px rgba(125, 211, 252, 0.12);
+            margin-top: 4px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #d1d5db;
+        }
+
+        .footer-note {
+            grid-column: span 2;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #cbd5f5;
+            opacity: 0.9;
+        }
+        @media (max-width: 860px) { .footer-note { grid-column: span 1; } }
+
+        @keyframes floatIn {
+            from { opacity: 0; transform: translateY(16px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
     </style>
 </head>
@@ -95,6 +301,82 @@
         <p>We are currently performing some scheduled updates to make our website even better. 🌟 <br><br>
            Please check back soon. We appreciate your patience and understanding! Thank you for being part of our community. ❤️</p>
         <a href="https://se-vin.com" class="button">🔄 Try Again</a>
+    <div class="wrapper">
+        <div class="card hero">
+            <div class="eyebrow">🛠 Scheduled Maintenance</div>
+            <h1>We’re polishing the experience for you</h1>
+            <p>Our servers are currently undergoing a planned maintenance window to roll out performance upgrades, improved resilience, and a refreshed look. We’ll be back online shortly, brighter and better than ever.</p>
+            <div class="cta-row">
+                <a class="cta primary" href="https://se-vin.com">🔄 Refresh status</a>
+                <a class="cta secondary" href="mailto:support@se-vin.com">📩 Notify me when back</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="chip">Live Status</div>
+            <ul class="status-list">
+                <li class="status-item">
+                    <span class="status-icon">⚡</span>
+                    <div class="status-copy">
+                        <strong>Infrastructure updates</strong><br>
+                        Rolling out faster edge caching and reduced latency worldwide.
+                    </div>
+                </li>
+                <li class="status-item">
+                    <span class="status-icon">🛡️</span>
+                    <div class="status-copy">
+                        <strong>Security hardening</strong><br>
+                        Applying the latest protections to keep your data safe.
+                    </div>
+                </li>
+                <li class="status-item">
+                    <span class="status-icon">✨</span>
+                    <div class="status-copy">
+                        <strong>Experience refresh</strong><br>
+                        New visuals and smoother navigation are on the way.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="chip">What’s happening now</div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div>
+                        <strong>Current task</strong><br>
+                        Finalizing deployment and verifying uptime across regions.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div>
+                        <strong>Next</strong><br>
+                        Automated health checks, then service will be restored.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div>
+                        <strong>On deck</strong><br>
+                        Post-maintenance monitoring and release notes to your inbox.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" aria-live="polite">
+            <div class="chip">Quick help</div>
+            <p>If you need assistance during this window, we’re here for you. Reach out and we’ll respond as soon as we’re back online.</p>
+            <div class="cta-row">
+                <a class="cta secondary" href="tel:+32469152519">📞 Call support</a>
+                <a class="cta secondary" href="mailto:support@se-vin.com">✉️ Email support</a>
+            </div>
+        </div>
+
+        <div class="footer-note">Thank you for your patience. We’re committed to delivering a blazing-fast, reliable experience—see you in just a moment. ✨</div>
     </div>
 </body>
+</html>
 </html>

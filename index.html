@@ -4,29 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>We'll Be Back Soon! 🚧</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Service Update | We’ll Be Right Back</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
         /* General Styling */
-        :root {
-            --page-bg: #070b13;
-            --panel: rgba(255, 255, 255, 0.04);
-            --panel-strong: rgba(255, 255, 255, 0.08);
-            --stroke: rgba(255, 255, 255, 0.12);
-            --text: #eef2ff;
-            --muted: #c7d2fe;
-            --accent: #7dd3fc;
-            --accent-2: #c084fc;
-            --accent-3: #38f2b7;
-            --shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
-            color-scheme: dark;
-        }
-
-        * { box-sizing: border-box; }
-
         body {
             margin: 0;
             padding: 0;
@@ -35,67 +14,10 @@
             color: #333;
             text-align: center;
             padding: 50px;
-            min-height: 100vh;
-            background: radial-gradient(circle at 20% 20%, rgba(125, 211, 252, 0.18) 0, transparent 28%),
-                        radial-gradient(circle at 80% 8%, rgba(192, 132, 252, 0.18) 0, transparent 30%),
-                        radial-gradient(circle at 30% 82%, rgba(56, 242, 183, 0.18) 0, transparent 28%),
-                        linear-gradient(145deg, #050910 0%, #0c1220 100%);
-            font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--text);
             display: flex;
-            align-items: center;
             justify-content: center;
-            padding: clamp(18px, 4vw, 40px);
-            overflow-x: hidden;
-        }
-
-        .grid {
-            width: min(1180px, 100%);
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: clamp(14px, 3vw, 24px);
-            position: relative;
-        }
-
-        .grid::before,
-        .grid::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 28px;
-            background: conic-gradient(from 120deg at 50% 50%, rgba(125, 211, 252, 0.2), rgba(192, 132, 252, 0.12), rgba(56, 242, 183, 0.18), rgba(125, 211, 252, 0.2));
-            filter: blur(70px);
-            opacity: 0.45;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .grid::after {
-            inset: 16px;
-            filter: blur(140px);
-            opacity: 0.35;
-        }
-
-        .card {
-            grid-column: span 12;
-            background: var(--panel);
-            border: 1px solid var(--stroke);
-            border-radius: 24px;
-            padding: clamp(18px, 3vw, 28px);
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(16px);
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: clamp(12px, 4vw, 22px);
             align-items: center;
             height: 100vh;
-            border: 1px solid rgba(125, 211, 252, 0.25);
-            background: linear-gradient(135deg, rgba(125, 211, 252, 0.08), rgba(192, 132, 252, 0.04));
         }
 
         .container {
@@ -105,11 +27,6 @@
             background: rgba(255, 255, 255, 0.9);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             animation: fadeIn 1.5s ease-in-out;
-        .hero h1 {
-            margin: 8px 0 12px;
-            font-family: 'Space Grotesk', 'Manrope', sans-serif;
-            font-size: clamp(2.2rem, 4vw, 3.4rem);
-            letter-spacing: -0.03em;
         }
 
         /* Headline */
@@ -117,53 +34,17 @@
             font-size: 3rem;
             margin-bottom: 20px;
             color: #FF6B6B;
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 14px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.07);
-            color: var(--muted);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-size: 0.9rem;
         }
 
         p {
             font-size: 1.5rem;
             line-height: 1.8;
             margin-bottom: 20px;
-        .pill-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 12px 0;
         }
 
         /* Emojis Styling */
         .emoji {
             font-size: 4rem;
-        .pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.09);
-            color: var(--muted);
-            font-weight: 600;
-        }
-
-        p { margin: 0; line-height: 1.7; color: var(--muted); }
-
-        .cta-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 14px;
         }
 
         /* Button Styling */
@@ -174,44 +55,14 @@
             color: white;
             border: none;
             border-radius: 50px;
-        .cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 18px;
-            border-radius: 14px;
-            font-weight: 800;
-            letter-spacing: 0.01em;
             text-decoration: none;
             font-size: 1.2rem;
             transition: all 0.3s ease;
             cursor: pointer;
-            border: 1px solid transparent;
-            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-            color: #0b1021;
-        }
-
-        .cta.primary {
-            background: linear-gradient(135deg, #7dd3fc, #60a5fa);
-            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.35);
-        }
-
-        .cta.secondary {
-            background: rgba(255, 255, 255, 0.07);
-            color: var(--text);
-            border-color: rgba(255, 255, 255, 0.14);
         }
 
         .button:hover {
             background-color: #333;
-        .cta:hover { transform: translateY(-2px) scale(1.01); }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 14px;
-            margin-top: 14px;
         }
 
         /* Responsive Design */
@@ -222,13 +73,6 @@
             p {
                 font-size: 1.2rem;
             }
-        .stat {
-            padding: 14px;
-            border-radius: 18px;
-            background: var(--panel-strong);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            display: grid;
-            gap: 6px;
         }
 
         /* Fade-in Animation */
@@ -241,136 +85,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        .stat .label { color: var(--muted); font-weight: 600; }
-        .stat .value { font-size: 1.4rem; font-weight: 800; }
-
-        .panel-title {
-            font-weight: 800;
-            font-size: 1.05rem;
-            letter-spacing: 0.01em;
-            margin: 0 0 10px;
-        }
-
-        .status-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
-
-        .status-item {
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            gap: 12px;
-            align-items: center;
-            padding: 12px;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .status-icon {
-            width: 40px;
-            height: 40px;
-            display: grid;
-            place-items: center;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 1.1rem;
-        }
-
-        .badge {
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-weight: 700;
-            background: rgba(125, 211, 252, 0.12);
-            color: #a5f3fc;
-            border: 1px solid rgba(125, 211, 252, 0.45);
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            font-size: 0.78rem;
-        }
-
-        .timeline { display: grid; gap: 16px; }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 28px;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: 10px;
-            top: 6px;
-            bottom: -16px;
-            width: 2px;
-            background: linear-gradient(180deg, rgba(125, 211, 252, 0.7), rgba(192, 132, 252, 0.35));
-        }
-
-        .timeline-item:last-child::before { bottom: 10px; }
-
-        .dot {
-            position: absolute;
-            left: 0;
-            top: 4px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #7dd3fc, #c084fc);
-            box-shadow: 0 0 0 6px rgba(125, 211, 252, 0.15);
-        }
-
-        .progress {
-            margin: 12px 0 4px;
-            width: 100%;
-            height: 12px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.05);
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .progress span {
-            display: block;
-            height: 100%;
-            width: 72%;
-            background: linear-gradient(90deg, #38f2b7, #7dd3fc, #c084fc);
-            background-size: 200% 100%;
-            animation: shimmer 3.5s ease infinite;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 12px;
-        }
-
-        .contact-card {
-            padding: 14px;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            display: grid;
-            gap: 6px;
-        }
-
-        .footer {
-            text-align: center;
-            color: var(--muted);
-            margin-top: 6px;
-            font-size: 0.95rem;
-        }
-
-        @keyframes shimmer {
-            0% { background-position: 0 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0 50%; }
-        }
-
-        @media (max-width: 720px) {
-            body { padding: 16px; }
-            .card { padding: 16px; }
-            .status-item { grid-template-columns: auto 1fr; }
-            .status-item .badge { justify-self: start; margin-top: 6px; }
-            .timeline-item::before { left: 11px; }
-            .dot { left: 3px; }
         }
     </style>
 </head>
@@ -382,134 +96,5 @@
            Please check back soon. We appreciate your patience and understanding! Thank you for being part of our community. ❤️</p>
         <a href="https://se-vin.com" class="button">🔄 Try Again</a>
     </div>
-    <main class="grid">
-        <section class="card hero" aria-live="polite">
-            <div>
-                <div class="eyebrow">Scheduled maintenance</div>
-                <h1>We’re tuning up the experience</h1>
-                <p>Our servers are temporarily offline while we upgrade performance, security, and reliability. Thank you for your patience—we’ll have everything back online shortly.</p>
-                <div class="pill-row" aria-hidden="true">
-                    <span class="pill">⚡ Faster performance</span>
-                    <span class="pill">🛡️ Security hardening</span>
-                    <span class="pill">✨ Refreshed UI</span>
-                </div>
-                <div class="cta-row">
-                    <a class="cta primary" href="https://se-vin.com">🔄 Refresh status</a>
-                    <a class="cta secondary" href="mailto:support@se-vin.com">📩 Notify me</a>
-                </div>
-            </div>
-            <div>
-                <div class="panel-title">Maintenance progress</div>
-                <div class="progress" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
-                    <span aria-hidden="true"></span>
-                </div>
-                <p>Currently deploying updates across all regions. Estimated completion within the hour.</p>
-                <div class="stats">
-                    <div class="stat">
-                        <div class="label">Uptime target</div>
-                        <div class="value">99.99%</div>
-                        <small>Post-maintenance objective</small>
-                    </div>
-                    <div class="stat">
-                        <div class="label">Coverage</div>
-                        <div class="value">Global</div>
-                        <small>North America · EMEA · APAC</small>
-                    </div>
-                    <div class="stat">
-                        <div class="label">Next update</div>
-                        <div class="value">~15 minutes</div>
-                        <small>Fresh status every quarter hour</small>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="card" style="grid-column: span 7;">
-            <h2 class="panel-title">Live status</h2>
-            <ul class="status-list">
-                <li class="status-item">
-                    <div class="status-icon">🛠️</div>
-                    <div>
-                        <strong>Core services</strong><br>
-                        Applying infrastructure upgrades and verifying redundancy across clusters.
-                    </div>
-                    <span class="badge">In Progress</span>
-                </li>
-                <li class="status-item">
-                    <div class="status-icon">🛡️</div>
-                    <div>
-                        <strong>Security</strong><br>
-                        Rolling out the latest protections to keep your data safe.
-                    </div>
-                    <span class="badge" style="background: rgba(56, 242, 183, 0.12); color: #6ef9ce; border-color: rgba(56, 242, 183, 0.45);">Monitoring</span>
-                </li>
-                <li class="status-item">
-                    <div class="status-icon">🌐</div>
-                    <div>
-                        <strong>Edge network</strong><br>
-                        Rebalancing traffic and testing lower latency routes worldwide.
-                    </div>
-                    <span class="badge">In Progress</span>
-                </li>
-            </ul>
-        </section>
-
-        <section class="card" style="grid-column: span 5;">
-            <h2 class="panel-title">What to expect</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="dot" aria-hidden="true"></span>
-                    <div>
-                        <strong>Current step</strong><br>
-                        Deploying updates and validating failover readiness across all zones.
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="dot" aria-hidden="true"></span>
-                    <div>
-                        <strong>Next</strong><br>
-                        Automated health checks and smoke tests before re-opening traffic.
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="dot" aria-hidden="true"></span>
-                    <div>
-                        <strong>On deck</strong><br>
-                        Post-maintenance monitoring with detailed release notes delivered to you.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="card" style="grid-column: span 7;">
-            <h2 class="panel-title">Need help while we’re offline?</h2>
-            <p>We’re monitoring requests even during maintenance. If something is urgent, reach us using the options below and we’ll respond as soon as possible.</p>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <strong>Call support</strong>
-                    <span>+1 (800) 123-4567</span>
-                </div>
-                <div class="contact-card">
-                    <strong>Email</strong>
-                    <a href="mailto:support@se-vin.com" style="color: var(--text); text-decoration: none;">support@se-vin.com</a>
-                </div>
-                <div class="contact-card">
-                    <strong>Status page</strong>
-                    <a href="https://se-vin.com" style="color: var(--text); text-decoration: none;">Check live updates</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="card" style="grid-column: span 5;">
-            <h2 class="panel-title">Stay in the loop</h2>
-            <p>Choose how you’d like to hear from us when we’re back online.</p>
-            <div class="cta-row">
-                <a class="cta primary" href="https://se-vin.com">🚀 Open status page</a>
-                <a class="cta secondary" href="mailto:support@se-vin.com">📩 Get notified</a>
-            </div>
-            <p class="footer">No action required—your services will resume automatically once maintenance completes.</p>
-        </section>
-    </main>
 </body>
-</html>
 </html>
